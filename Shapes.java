@@ -21,8 +21,11 @@ public class Shapes extends JPanel {
 
    public void paintComponent (Graphics g) {
       //Experiment with new methods here. Don't forget setColor!
-
-      
-
+      g.setColor(Color.red);
+      g.fillOval(100, 100, 50, 50);
+      g.setColor(Color.green);
+      g.fillRect(200, 200, 25, 25);
    }
+
+    
 }
