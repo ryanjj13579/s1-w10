@@ -27,5 +27,19 @@ public class Shapes extends JPanel {
       g.fillRect(200, 200, 25, 25);
    }
 
-    
+   public void drawBullsEye(Graphics g){
+      // g.setColor(Color.red);
+      // g.fillOval(100, 100, 50, 50);
+      // g.setColor(Color.green);
+      // g.fillRect(200, 200, 25, 25);
+   }
+
+   public void olympicRings(Graphics g){
+      //this.olympicRings(g);
+      //this.trafficLlight(g);
+   }
+
+   public void trafficLight(Graphics g){
+
+   }
 }
