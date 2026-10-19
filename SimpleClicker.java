@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class SimpleClicker extends JPanel implements MouseListener {
+public class SimpleClicker extends JPanel implements MouseListener, MouseMotionListener {
     private int xClick = -9999;
 	private int yClick = -9999;
     public SimpleClicker () {
@@ -12,17 +12,34 @@ public class SimpleClicker extends JPanel implements MouseListener {
         myFrame.setVisible (true);
                 
         addMouseListener (this);
+		addMouseMotionListener(this);
     }
 
+	public void mouseDragged(MouseEvent event){
+		System.out.println("here");
+	}
+
+
+	public void mouseMoved(MouseEvent event){
+		this.xClick = event.getX();
+		this.yClick = event.getY();
+		repaint();
+	}
+
 	public void paintComponent(Graphics g){
-		if(xClick != -9999 && yClick != -9999)
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setStroke(new BasicStroke(10.0f));
+		if(xClick != -9999 && yClick != -9999){
+			g.setColor(Color.red);
+		}
 			g.drawOval(xClick, yClick, 100, 100);
+
 	}
     
     public void mouseClicked (MouseEvent event) {
 		System.out.println ("You're tickling me!");
-		int x = event.getX();
-		int y = event.getY();
+		this.xClick = event.getX();
+		this.yClick = event.getY();
 		repaint();
 	}
 	
